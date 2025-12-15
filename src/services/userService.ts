@@ -16,6 +16,11 @@ export class UserService {
         this.users.push(newUser);
         return newUser;
     }
+      public modifyUser(name: string) {
+        const newUser = { id: this.currentId++, name, email: '' };
+        this.users.push(newUser);
+        return newUser;
+    }
 
     public updateUser(id: number, name: string, email: string) {
         const userIndex = this.users.findIndex(user => user.id === id);
